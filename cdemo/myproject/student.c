@@ -16,7 +16,7 @@ char printStudent(struct Student* student1)
         printf("The student's id is %d\n", student1->sid);
 }
 
-int main()
+void studentA()
 {
 	struct Student studentArr[5];
 	char input[50];
@@ -37,6 +37,6 @@ int main()
 	fgets(input, 50, stdin);
 	sscanf(input, "%d", &(studentArr[0].sid));
 
-	student(&studentArr[0]);
+	printStudent(&studentArr[0]);
 }
 

@@ -3,6 +3,5 @@
 
 int main()
 {
-	int r;
-	r = printStudent(struct Student* student1);
+	studentA();
 }
