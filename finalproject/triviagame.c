@@ -13,6 +13,19 @@ int getinput()
         return num;
 }
 
+char getname()
+{
+        char input[20];
+        char name[20];
+
+        fgets(input, 20, stdin);
+
+        sscanf(input, "%s", name);
+
+        return *name;
+}
+
+
 void instructions(int start)
 {
         printf("Welcome to the Trivia Quiz App!\n");
@@ -114,7 +127,7 @@ void overall()
 	int score = 0;
 	int answer = 1;
 	FILE *fp;
-	
+
 
 	instructions(start);
 
@@ -134,9 +147,13 @@ void overall()
         score = checkTrue(score, answer);
 
 	printf("Congratulations! Your total score is %d points!\n", score);
-	
+	printf("What is your first initial? ");
+
+	char b = getname();
+
 	fp = fopen("/home/student1/website/student1/output.txt","a");
 
+	fprintf(fp,"%c ", b);
 	fprintf(fp, "%d \n", score);
 
 	fclose(fp);
